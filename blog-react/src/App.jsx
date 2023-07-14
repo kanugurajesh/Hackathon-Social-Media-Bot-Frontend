@@ -56,10 +56,13 @@ const StyledFooter = styled.div`
 export default function App() {
   const [session, setSession] = useState(null);
   const [show, setShow] = useState(false);
+  const [input, setInput] = useState("");
   // create a list of alerts
-  const [alerts, setAlerts] = useState(["who is dhoni", "who cpu work", "what is programming", "hello who are you",]);
+  // const [alerts, setAlerts] = useState(["who is dhoni", "who cpu work", "what is programming", "hello who are you",]);
+  const [alerts, setAlerts] = useState([]);
   // create a list of messages
-  const [messages, setMessages] = useState(["he is great","cpu is a brain of computer","programming is a art","i am a bot"]);
+  // const [messages, setMessages] = useState(["he is great","cpu is a brain of computer","programming is a art","i am a bot"]);
+  const [messages, setMessages] = useState([]);
 
   const handleClick = () => setShow(!show);
   useEffect(() => {
@@ -76,14 +79,11 @@ export default function App() {
     return () => subscription.unsubscribe()
   }, [])
 
-  const requestSendner = async (e) => {
-    e.preventDefault();
-    // update the alerts
-    setAlerts([...alerts, e.target.value]);
-    // update the messages
-    setMessages([...messages, ""]);
-    console.log(e.target.value);
-    // send the request to the server
+  const requestSendner = () => {
+    if(input.length > 0){
+      setAlerts([...alerts, input]);
+      setInput("");
+    }
   }
 
   if (!session) {
@@ -116,11 +116,10 @@ export default function App() {
         ))}
         </StyledMesseges>
         <StyledFooter>
-        {/* <Search placeholder="input search text" enterButton="Search" size="large" /> */}
-        {/* <StyledInput> */}
-        <TextArea rows={3} placeholder="maxLength is 6" maxLength={100} />
-        <Button variant="outlined">Outlined</Button>
-        {/* </StyledInput> */}
+        <TextArea rows={3} placeholder="maxLength is 6" maxLength={100} onChange={(e)=>{
+          setInput(e.target.value);
+        }}/>
+        <Button variant="outlined" onClick={requestSendner}>Request</Button>
         </StyledFooter>
         </StyledChat>
       </>
