@@ -15,7 +15,7 @@ const App = () => (
   <Auth
     supabaseClient={supabase}
     appearance={{ theme: ThemeSupa }}
-    providers={['google', 'facebook', 'twitter']}
+    providers={['google', 'github']}
   />
 )
 export default App
