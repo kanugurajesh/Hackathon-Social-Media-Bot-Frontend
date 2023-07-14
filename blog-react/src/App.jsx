@@ -118,10 +118,10 @@ export default function App() {
         ))}
         </StyledMesseges>
         <StyledFooter>
-        <TextArea rows={3} placeholder="maxLength is 6" maxLength={100} style={{resize:'none'}} onChange={(e)=>{
+        <TextArea rows={3} placeholder="maxLength is 6" maxLength={100} style={{resize:'none',border:"1px solid"}} onChange={(e)=>{
           setInput(e.target.value);
         }}/>
-        <Button variant="outlined" onClick={requestSendner}>Request</Button>
+        <Button variant="outlined" onClick={requestSendner} style={{border:"1px solid"}}>Request</Button>
         </StyledFooter>
         </StyledChat>
       </>
