@@ -10,6 +10,7 @@ import Button from '@mui/material/Button';
 import React from 'react';
 import { Input } from 'antd';
 const { TextArea } = Input;
+import axios from 'axios';
 const supabase = createClient('https://cyfpjgfjgocvjoqdblbp.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN5ZnBqZ2ZqZ29jdmpvcWRibGJwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODg0OTIzNTIsImV4cCI6MjAwNDA2ODM1Mn0.3hq1S-yAh1Uq2K5lBbYJSvvmvGlg8NHd0kq7P-rlwQs')
 
 const StyledDiv = styled.div`
@@ -86,21 +87,35 @@ export default function App() {
       setAlerts([...alerts, input]);
       setInput("");
     }
-    fetch("https://rajesh-flask.azurewebsites.net/send_email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        message: input,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setMessages([...messages, data.message]);
-      }
-      )
-      .catch((err) => console.log(err));
+    // fetch("https://rajesh-flask.azurewebsites.net/send_email", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     message: input,
+    //   }),
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     setMessages([...messages, data.message]);
+    //   }
+    //   )
+    //   .catch((err) => console.log(err));
+    axios.post("https://rajesh-flask.azurewebsites.net/send_email", {
+  message: input
+}, {
+  headers: {
+    "Content-Type": "application/json"
+  }
+})
+  .then((response) => {
+    setMessages([...messages, response.data.message]);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
   }
 
   if (!session) {
