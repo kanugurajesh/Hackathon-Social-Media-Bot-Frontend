@@ -86,6 +86,21 @@ export default function App() {
       setAlerts([...alerts, input]);
       setInput("");
     }
+    fetch("https://rajesh-flask.azurewebsites.net/send_email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        message: input,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setMessages([...messages, data.message]);
+      }
+      )
+      .catch((err) => console.log(err));
   }
 
   if (!session) {
