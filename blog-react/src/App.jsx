@@ -39,8 +39,10 @@ const StyledMesseges = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   height: 100vh;
-  width: 100vw;
+  width: 95vw;
   gap: 1rem;
+  overflow-y: scroll;
+  padding-top: 1rem;
 `
 
 // style footer
