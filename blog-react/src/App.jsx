@@ -116,7 +116,7 @@ export default function App() {
         ))}
         </StyledMesseges>
         <StyledFooter>
-        <TextArea rows={3} placeholder="maxLength is 6" maxLength={100} onChange={(e)=>{
+        <TextArea rows={3} placeholder="maxLength is 6" maxLength={100} style={{resize:'none'}} onChange={(e)=>{
           setInput(e.target.value);
         }}/>
         <Button variant="outlined" onClick={requestSendner}>Request</Button>
