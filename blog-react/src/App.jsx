@@ -102,19 +102,43 @@ export default function App() {
     //   }
     //   )
     //   .catch((err) => console.log(err));
+    const delimiter = "\n";
+    const inputArray = input.split(delimiter);
+    for (let i = 0; i < inputArray.length; i++) {
+      inputArray[i] = inputArray[i].trim().split(':');
+    }
+
+    if (inputArray[0][0] === "Gmail") {
     axios.post("https://rajesh-flask.azurewebsites.net/send_email", {
-  message: input
-}, {
-  headers: {
-    "Content-Type": "application/json"
-  }
-})
-  .then((response) => {
-    setMessages([...messages, response.data.message]);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+      // message: input,
+      gmail:inputArray[0][1],
+      message:inputArray[1][1]
+    }, {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then((response) => {
+        setMessages([...messages, response.data.message]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    }else {
+      axios.post("https://rajesh-flask.azurewebsites.net/respond", {
+      message: input,
+    }, {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then((response) => {
+        setMessages([...messages, response.data.message]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    }
 
   }
 
