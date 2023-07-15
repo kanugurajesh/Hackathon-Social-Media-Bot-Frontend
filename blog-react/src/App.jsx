@@ -87,21 +87,6 @@ export default function App() {
       setAlerts([...alerts, input]);
       setInput("");
     }
-    // fetch("https://rajesh-flask.azurewebsites.net/send_email", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     message: input,
-    //   }),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     setMessages([...messages, data.message]);
-    //   }
-    //   )
-    //   .catch((err) => console.log(err));
     const delimiter = "\n";
     const inputArray = input.split(delimiter);
     for (let i = 0; i < inputArray.length; i++) {
@@ -124,7 +109,56 @@ export default function App() {
       .catch((error) => {
         console.log(error);
       });
-    }else {
+    }else if(inputArray[0][0] === "Whatsapp"){
+      axios.post("https://rajesh-flask.azurewebsites.net/send_whatsapp", {
+      // message: input,
+      whatsapp:inputArray[0][1],
+      message:inputArray[1][1]
+    }, {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then((response) => {
+        setMessages([...messages, response.data.message]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    }else if(inputArray[0][0] === "SMS"){
+      axios.post("https://rajesh-flask.azurewebsites.net/send_sms", {
+      // message: input,
+      sms:inputArray[0][1],
+      message:inputArray[1][1]
+    }, {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then((response) => {
+        setMessages([...messages, response.data.message]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    }else if(inputArray[0][0] === "Call"){
+      axios.post("https://rajesh-flask.azurewebsites.net/make_call", {
+      // message: input,
+      call:inputArray[0][1],
+      message:inputArray[1][1]
+    }, {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then((response) => {
+        setMessages([...messages, response.data.message]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    }
+    else {
       axios.post("https://rajesh-flask.azurewebsites.net/respond", {
       message: input,
     }, {
