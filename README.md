@@ -11,10 +11,10 @@ To solve the above problem problem I have created gmate which automates gmail, w
 
 ## Screenshots
 <div>
-  <img src="https://github.com/kanugurajesh/Hackathon-Social-Media-Bot-Frontend/assets/120458029/af93a70f-77f7-4c96-a4a0-733f8c782c60" width=220 height=450>
-  <img src="https://github.com/kanugurajesh/Hackathon-Social-Media-Bot-Frontend/assets/120458029/a8bd235f-d0ec-44a6-a111-03b574814d80" width=220 height=450>
-  <img src="https://github.com/kanugurajesh/Hackathon-Social-Media-Bot-Frontend/assets/120458029/f6f72698-666e-4a26-b975-c4e1267dea89" width=220 height=450>
-  <img src="https://github.com/kanugurajesh/Hackathon-Social-Media-Bot-Frontend/assets/120458029/bc999779-a53b-4c77-9512-e78a457f1163" width=220 height=450>
+  <img src="https://github.com/kanugurajesh/Hackathon-Social-Media-Bot-Frontend/assets/120458029/af93a70f-77f7-4c96-a4a0-733f8c782c60" width=250 height=450>
+  <img src="https://github.com/kanugurajesh/Hackathon-Social-Media-Bot-Frontend/assets/120458029/a8bd235f-d0ec-44a6-a111-03b574814d80" width=250 height=450>
+  <img src="https://github.com/kanugurajesh/Hackathon-Social-Media-Bot-Frontend/assets/120458029/f6f72698-666e-4a26-b975-c4e1267dea89" width=250 height=450>
+  <img src="https://github.com/kanugurajesh/Hackathon-Social-Media-Bot-Frontend/assets/120458029/bc999779-a53b-4c77-9512-e78a457f1163" width=250 height=450>
 </div>
 
 ## Demo
