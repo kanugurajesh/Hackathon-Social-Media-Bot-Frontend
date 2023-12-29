@@ -23,3 +23,9 @@ To solve the above problem problem I have created gmate which automates gmail, w
 
 ## Demo
 https://github.com/kanugurajesh/Hackathon-Social-Media-Bot-Frontend/assets/120458029/7186d161-7e3e-4db4-8be4-0ce3b82cdafd
+
+## Hackathon Prize
+I got consolation prize from the hundreds of people who had participated in the hackathon. I learnt a lot from it and the hackathon also improved my programming skills.
+<br>
+<br>
+<img src="https://github.com/kanugurajesh/Hackathon-Social-Media-Bot-Frontend/assets/120458029/d385b42c-c03c-4e58-832b-02b49443956c" width=700 height=600>
