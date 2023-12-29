@@ -58,7 +58,6 @@ I got consolation prize from the hundreds of people who had participated in the 
 - Express
 - Styled Components
 
-## 🔗 Links
 ## Contribution Guidelines
 
 We welcome contributions to enhance and improve the llm app. If you have ideas or improvements, feel free to submit a pull request following our contribution guidelines.
