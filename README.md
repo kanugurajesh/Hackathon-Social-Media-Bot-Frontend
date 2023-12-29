@@ -20,6 +20,12 @@ To solve the above problem problem I have created gmate which automates gmail, w
 2. Supabase Account
 ```
 
+## Project Structure
+
+The project is divided into two parts one is frontend and other is backend
+
+In this we install the frontend after setting up the frontend go to backend repository and set it up by following the instructions
+
 ## Project Setup
 
 ```bash
