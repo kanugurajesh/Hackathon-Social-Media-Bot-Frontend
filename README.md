@@ -1,5 +1,9 @@
 #### 🌟 star this repo if you like it
 
+<div align=center>
+  <img src="https://github.com/kanugurajesh/Hackathon-Social-Media-Bot-Frontend/assets/120458029/9855baa7-27a4-47e5-9558-affcd8dca39e" alt="bot" width=150 height=150>
+</div>
+
 # Gmate
 A Social media automation bot integrated with ai to make social media management easier
 
